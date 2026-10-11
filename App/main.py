@@ -1,6 +1,7 @@
 from fastapi import FastAPI
 from fastapi.responses import FileResponse
 from fastapi.staticfiles import StaticFiles
+import dou
 
 app = FastAPI()
 
@@ -8,3 +9,6 @@ app = FastAPI()
 async def health():
     return {"status": "ok"}
 
+@app.get("/get_vacancies")
+def get_vacancies():
+    return dou.parse_vacancies()

@@ -9,6 +9,6 @@ app = FastAPI()
 async def health():
     return {"status": "ok"}
 
-@app.get("/get_vacancies")
+@app.get("/vacancies")
 def get_vacancies():
     return dou.parse_vacancies()

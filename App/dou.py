@@ -23,8 +23,9 @@ def parse_vacancies() -> list[dict]:
         vacancies.append({
             "title": title.get_text(strip=True),
             "date": date.get_text(strip=True) if date else None,
-            "locate": locatation.get_text(strip=True) if locatation else None,
+            "location": locatation.get_text(strip=True) if locatation else None,
             "link": title.get('href',),
+            "source": "dou"
 
         })
     return vacancies
